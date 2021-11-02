@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Обо мне / Евгений Горбишин / Yevhen Horbyshyn
+title: Обо мне (Евгений Горбишин)
 permalink: /about/
 ---
 ### Информация обо мне
@@ -42,4 +42,5 @@ permalink: /about/
 ### Связь со мной
 
 [y.horbyshyn@gmail.com](mailto:y.horbyshyn@gmail.com)
-[me@horbyshyn.com](mailto:me@horbyshyn.com)
+<br>
+[t.me/horbyshyn](https://t.me/horbyshyn)
