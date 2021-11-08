@@ -32,9 +32,13 @@
     </div>
 
     <div id="main" role="main" class="container">
-      {% for tag in tags %}
-        <a href="#{{ tag | slugify }}"> {{ tag }} </a>
+      <ul class="tags">
+      {% for tag in page.tags %}
+        <li>
+          <a href="#{{ tag | slugify }}"> {{ tag }} </a>
+        </li>
       {% endfor %}
+      </ul>
       {{ content }}
     </div>
 
