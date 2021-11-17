@@ -1,0 +1,25 @@
+---
+layout: post
+title: Работа со свойством заказа в d7 Bitrix. 1С-Битрикс
+---
+
+Как получить в 1С-Битрикс матрицу цен в своём компоненте либо просто в компоненте, где этого не предусмотрено.
+```
+$arResultPrices = CIBlockPriceTools::GetCatalogPrices($this->arParams['IBLOCK_ID'], $this->arParams['PRICE_CODE']);
+foreach ($arResultPrices as $value) {
+    $arPriceTypeID[] = $value['ID'];
+}
+
+if (isset($value))
+    unset($value);
+
+$res = $this->arResult['PRICE_MATRIX'] = CatalogGetPriceTableEx($productId, 0, $arPriceTypeID, 'Y');
+if (is_array($this->arResult['PRICE_MATRIX'])) {
+    $boolSKUDisplayProps = true;
+
+    if (isset($this->arResult['PRICE_MATRIX']['COLS']) && is_array($this->arResult['PRICE_MATRIX']['COLS'])) {
+    foreach ($this->arResult['PRICE_MATRIX']['COLS'] as $keyColumn => $arColumn)
+        $this->arResult['PRICE_MATRIX']['COLS'][$keyColumn]['NAME_LANG'] = htmlspecialcharsbx($arColumn['NAME_LANG']);
+    }
+}
+```
